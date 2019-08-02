@@ -203,19 +203,6 @@ var multiItemSlider = (function() {
             }
 
             document.addEventListener('visibilitychange', _handleVisibilityChange, false);
-            window.addEventListener('resize', function() {
-                var
-                    _index = 0,
-                    width = parseFloat(document.body.clientWidth);
-                _states.forEach(function(item, index, arr) {
-                    if (width >= _states[index].minWidth)
-                        _index = index;
-                });
-                if (_index !== _getActive()) {
-                    _setActive();
-                    _refresh();
-                }
-            });
         }
 
         var _addIndicators = function() {
