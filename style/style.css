@@ -1407,6 +1407,9 @@ nav li {
     .categories_content img {
         width: 100%;
     }
+    .categories_content_box_load {
+        flex-direction: column;
+    }
     .margin {
         margin-right: 0px;
     }
@@ -1621,6 +1624,9 @@ nav li {
     .categories_content img {
         width: 100%;
     }
+    .categories_content_box_load {
+        flex-direction: column;
+    }
     .margin {
         margin-right: 0px;
     }
@@ -1833,6 +1839,9 @@ nav li {
     }
     .categories_content img {
         width: 100%;
+    }
+    .categories_content_box_load {
+        flex-direction: column;
     }
     .margin {
         margin-right: 0px;
@@ -2050,6 +2059,9 @@ nav li {
     }
     .categories_content img {
         width: 100%;
+    }
+    .categories_content_box_load {
+        flex-direction: column;
     }
     .margin {
         margin-right: 0px;
