@@ -407,7 +407,7 @@ $(document).ready(function() {
     });
 
     $(".menu").click(function() {
-        if (!$(this).data('status')) {
+        if ($("#span").hasClass("menu-top-click")) {
             setTimeout(function() {
                 document.getElementById('header_box_id').style.display = 'flex';
             }, 1000);
