@@ -261,7 +261,8 @@ var Menu = {
         ham: $('.menu'),
         menuTop: $('.menu-top'),
         menuMiddle: $('.menu-middle'),
-        menuBottom: $('.menu-bottom')
+        menuBottom: $('.menu-bottom'),
+        headerBox: $('.header_box')
     },
 
     init: function() {
@@ -283,6 +284,9 @@ var Menu = {
         Menu.el.menuTop.toggleClass('menu-top-click');
         Menu.el.menuMiddle.toggleClass('menu-middle-click');
         Menu.el.menuBottom.toggleClass('menu-bottom-click');
+        setTimeout(function() {
+            Menu.el.headerBox.toggleClass('header_box_menu_active');
+        }, 500);
     }
 };
 
@@ -406,16 +410,4 @@ $(document).ready(function() {
 
     });
 
-    $(".menu").click(function() {
-        if ($("#span").hasClass("menu-top-click")) {
-            setTimeout(function() {
-                document.getElementById('header_box_id').style.display = 'flex';
-            }, 1000);
-            // $(".header_box").css({ "display": "flex" })
-            $(this).data('status', true);
-        } else {
-            $(".header_box").css({ "display": "none" })
-            $(this).data('status', false);
-        }
-    });
 })

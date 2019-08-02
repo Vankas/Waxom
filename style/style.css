@@ -64,6 +64,10 @@ body {
     /* border: 1px solid black; */
 }
 
+.header_box_menu_active {
+    display: flex !important;
+}
+
 .logo_mobile {
     display: none;
     width: 181px;
@@ -208,7 +212,7 @@ nav li {
     backface-visibility: hidden;
     top: 15px;
     transform: rotate(50deg);
-    transition: 0.55s 0.5s;
+    transition: 0.25s 0.25s;
 }
 
 .menu-middle-click {
@@ -219,7 +223,7 @@ nav li {
     backface-visibility: hidden;
     top: 15px;
     transform: rotate(-410deg);
-    transition: 0.55s 0.5s;
+    transition: 0.25s 0.25s;
 }
 
 .place {
