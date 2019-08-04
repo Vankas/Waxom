@@ -203,6 +203,19 @@ var multiItemSlider = (function() {
             }
 
             document.addEventListener('visibilitychange', _handleVisibilityChange, false);
+            window.addEventListener('resize', function() {
+                var
+                    _index = 0,
+                    width = parseFloat(document.body.clientWidth);
+                _states.forEach(function(item, index, arr) {
+                    if (width >= _states[index].minWidth)
+                        _index = index;
+                });
+                if (_index !== _getActive()) {
+                    _setActive();
+                    _refresh();
+                }
+            });
         }
 
         var _addIndicators = function() {
@@ -261,8 +274,7 @@ var Menu = {
         ham: $('.menu'),
         menuTop: $('.menu-top'),
         menuMiddle: $('.menu-middle'),
-        menuBottom: $('.menu-bottom'),
-        headerBox: $('.header_box')
+        menuBottom: $('.menu-bottom')
     },
 
     init: function() {
@@ -284,9 +296,6 @@ var Menu = {
         Menu.el.menuTop.toggleClass('menu-top-click');
         Menu.el.menuMiddle.toggleClass('menu-middle-click');
         Menu.el.menuBottom.toggleClass('menu-bottom-click');
-        setTimeout(function() {
-            Menu.el.headerBox.toggleClass('header_box_menu_active');
-        }, 500);
     }
 };
 
@@ -344,14 +353,12 @@ $(document).ready(function() {
         loop: true,
         margin: 10,
         nav: true,
-        autoWidth: true,
-        center: true,
         responsive: {
             0: {
                 items: 1
             },
-            750: {
-                items: 2
+            600: {
+                items: 3
             },
             1000: {
                 items: 3
@@ -410,4 +417,16 @@ $(document).ready(function() {
 
     });
 
+    $(".menu").click(function() {
+        if (!$(this).data('status')) {
+            setTimeout(function() {
+                document.getElementById('header_box_id').style.display = 'flex';
+            }, 1000);
+            // $(".header_box").css({ "display": "flex" })
+            $(this).data('status', true);
+        } else {
+            $(".header_box").css({ "display": "none" })
+            $(this).data('status', false);
+        }
+    });
 })
